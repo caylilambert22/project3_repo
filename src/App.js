@@ -4,9 +4,10 @@ import React from 'react';
 import { useState} from 'react';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
-import ToDos_form from './ToDos_form.js';
+
 import Layout from './Layout.js';
 import Listtodos from './Listtodos.js';
+import Addtodos from './Addtodo.js';
 
 
 
@@ -31,8 +32,10 @@ function App() {
      <Router>
       <Layout>
         <Routes>
-          <Route path="/" element={ <ToDos_form items={items} onDelete={deleteItem} /> } />
           <Route path="/" element={ <Listtodos items={items} onDelete={deleteItem} /> } />
+          <Route path="/add" element={ <Addtodos items={items} onDelete={deleteItem} /> } />
+          
+          
           
      
         </Routes>
