@@ -23,7 +23,7 @@ return (
   <form onSubmit = {handleSubmit}>
     <div className="mb-3">
       <label className="form-label">List To Do</label>
-      <input type="text" name="list" className="form-control" value={formData.list} required />
+      <input type="text" name="list" className="form-control" value={formData.list} onChange={handleChange} required />
     </div>
 
     <div className="mb-3">
@@ -35,7 +35,7 @@ return (
       <label className="form-label">Completed</label>
       <input type="checkbox" className="form-check-input" checked={formData.status} onChange={handleStatusChange} />
     </div>
-    <button type="submit" className="btn btn-primary">Save</button>
+    <button type="submit" className="btn btn-primary" onChange={handleSubmit}>Save</button>
   </form>
 )
 
