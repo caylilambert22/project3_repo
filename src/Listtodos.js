@@ -8,6 +8,7 @@ function Listtodos({items, onDelete}) {
     return ((filterStatus == 'All') || (filterStatus == 'Complete' && item.status) || (filterStatus == 'Incomplete' && !item.status))
   });
 
+
   return (
     <>
     <div>

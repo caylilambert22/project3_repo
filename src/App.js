@@ -19,12 +19,13 @@ function App() {
     {id: 1, title: "Oranges", description: "test data"}
   ])
 
-  function deleteItem(id) {
-    setItems(items.filter((item) => item.id != id))
+  function handleAdd(newItem) {
+    setItems([...items, {...newItem, id: Date.now()}]);
   };
-  function addItem(item) {
-    const newItem = {...item, id: Date.now()}
+  function handleDelete(id) {
+    setItems(items.filter(item=>item.id !== id));
   };
+
   function updateItem(updated) {
     setItems(items.map((item) => item.id === updated.id ? updated : item)) 
   };
@@ -33,8 +34,8 @@ function App() {
      <Router>
       <Layout>
         <Routes>
-          <Route path="/" element={ <Listtodos items={items} onDelete={deleteItem} /> } />
-          <Route path="/add" element={ <Addtodos items={items} onAdd={addItem} /> } />
+          <Route path="/" element={ <Listtodos items={items} onDelete={handleDelete} /> } />
+          <Route path="/add" element={ <Addtodos items={items} onAdd={handleAdd} /> } />
           <Route path="/edit" element={ <Edittodo items={items} onUpdate={updateItem}/>} />
         </Routes>
       </Layout>
