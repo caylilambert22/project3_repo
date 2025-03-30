@@ -26,15 +26,16 @@ return (
       <input type="text" name="list" className="form-control" value={formData.list} onChange={handleChange} required />
     </div>
 
-    <div className="mb-3">
-      <label className="form-label">Category</label>
-      <input type="text" name="category" className="form-control" value={formData.category} onChange={handleChange} required />
+    <div className = "mb-3">
+      <label>Pick a category</label>
+      <select className='form-select' name='category' value={formData.category} onChange={handleChange} required>
+        <option value = {'All'}>All</option>
+        <option value = {'Morning'}>Morning</option>
+        <option value = {'Noon'}>Noon</option>
+        <option value = {'Night'}>Night</option>
+      </select>
     </div>
 
-    <div className="mb-3 form-check">
-      <label className="form-label">Completed</label>
-      <input type="checkbox" className="form-check-input" checked={formData.status} onChange={handleStatusChange} />
-    </div>
     <button type="submit" className="btn btn-primary" onChange={handleSubmit}>Save</button>
   </form>
 )

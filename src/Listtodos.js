@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import {Link} from 'react-router-dom';
 
 function Listtodos({items, onDelete, setItems}) {
-  const [filterStatus, setfilterStatus] = useState('All');
+  const [filterCategory, setFilterCategory] = useState('All');
 
   const filteredItems = items.filter(item => {
-    return ((filterStatus == 'All') || (filterStatus == 'Complete' && item.status) || (filterStatus == 'Incomplete' && !item.status))
+    return (
+      filterCategory === 'All' ||
+      filterCategory === item.category )
   });
 
 
@@ -18,10 +20,11 @@ function Listtodos({items, onDelete, setItems}) {
   return (
     <>
     <div>
-      <select className='form-select' onChange={(e)=>setfilterStatus(e.target.value)}>
+      <select className='form-select' onChange={(e)=>setFilterCategory(e.target.value)}>
         <option value = {'All'}>All</option>
-        <option value = {'Complete'}>Complete</option>
-        <option value = {'Incomplete'}>Incomplete</option>
+        <option value = {'Morning'}>Morning</option>
+        <option value = {'Noon'}>Noon</option>
+        <option value = {'Night'}>Night</option>
       </select>
     </div>
 
@@ -43,7 +46,7 @@ function Listtodos({items, onDelete, setItems}) {
                 {item.completed} <input type="checkbox" checked={item.completed} onChange={()=> handleCheckboxChange(item.id)}></input></td>
               <td style={{textDecoration: item.completed ? 'line-through' : 'none'}}>{item.list}</td>
               <td style={{textDecoration: item.completed ? 'line-through' : 'none'}}>{item.category}</td>
-              <td style={{textDecoration: item.completed ? 'line-through' : 'none'}}>{item.status === true ? 'Completed' : 'Incomplete'}</td>
+              <td style={{textDecoration: item.completed ? 'line-through' : 'none'}}>{item.status === true ? 'Morning' : 'Incomplete'}</td>
               <td>
                 <Link className='btn btn-warning btn-sm me-2' to={`/edit/${item.id}`}>Edit</Link>
                 <button className='btn btn-danger btn-sm' onClick={()=>onDelete(item.id)}>Remove</button>
