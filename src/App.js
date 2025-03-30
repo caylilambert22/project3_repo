@@ -9,6 +9,7 @@ import Layout from './Layout.js';
 import Listtodos from './Listtodos.js';
 import Addtodos from './Addtodo.js';
 import Edittodo from './Edittodo.js';
+import Contact from './Contact.js';
 
 
 
@@ -34,9 +35,10 @@ function App() {
      <Router>
       <Layout>
         <Routes>
-          <Route path="/" element={ <Listtodos items={items} onDelete={handleDelete} /> } />
+          <Route path="/" element={ <Listtodos items={items} onDelete={handleDelete} setItems={setItems} /> } />
           <Route path="/add" element={ <Addtodos items={items} onAdd={handleAdd} /> } />
-          <Route path="/edit" element={ <Edittodo items={items} onUpdate={updateItem}/>} />
+          <Route path="/edit/:id" element={ <Edittodo items={items} onUpdate={updateItem}/>} />
+          <Route path="/contact" element={ <Contact initialData={{ first: '', last: '', email: '', comments: ''}} onSubmit={console.log} />} />
         </Routes>
       </Layout>
      </Router>
