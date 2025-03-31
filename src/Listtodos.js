@@ -28,14 +28,13 @@ function Listtodos({items, onDelete, setItems}) {
       </select>
     </div>
 
-    <div className='table-responsive mt-4'>
+    <div className='table-responsive mt-3'>
       <table className='table table-bordered'>
         <thead className='table-dark'>
           <tr>
             <th>Completed</th>
             <th>To Do</th>
             <th>Category</th>
-            <th>Status</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -46,7 +45,7 @@ function Listtodos({items, onDelete, setItems}) {
                 {item.completed} <input type="checkbox" checked={item.completed} onChange={()=> handleCheckboxChange(item.id)}></input></td>
               <td style={{textDecoration: item.completed ? 'line-through' : 'none'}}>{item.list}</td>
               <td style={{textDecoration: item.completed ? 'line-through' : 'none'}}>{item.category}</td>
-              <td style={{textDecoration: item.completed ? 'line-through' : 'none'}}>{item.status === true ? 'Morning' : 'Incomplete'}</td>
+              
               <td>
                 <Link className='btn btn-warning btn-sm me-2' to={`/edit/${item.id}`}>Edit</Link>
                 <button className='btn btn-danger btn-sm' onClick={()=>onDelete(item.id)}>Remove</button>
