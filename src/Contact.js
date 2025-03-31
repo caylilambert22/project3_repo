@@ -2,11 +2,17 @@ import React, { useState } from 'react';
 
 function Contact({ initialData, onSubmit })
 {
-  const [contactFormData, setFormData] = useState(initialData)
+  const [contactFormData, setFormData] = useState(initialData);
+  const [popUp, setPopUp] = useState(false);
 
 function handleContactSubmit(event) {
   event.preventDefault();
   onSubmit(contactFormData);
+
+  setPopUp(true);
+  setFormData({first: '', last: '', email:'', comments:''});
+
+  setTimeout(() => setPopUp(false), 3000);
 };
 
 function handleContactChange(event) {
@@ -15,6 +21,13 @@ function handleContactChange(event) {
 
 
 return (
+  <div>
+  {popUp && (
+    <div className="custom-popup">
+      <p>Thanks for submitting!</p>
+    </div>
+  )}
+
   <form onSubmit = {handleContactSubmit}>
     <div className="mb-3">
       <label className="form-label">First Name</label>
@@ -39,6 +52,7 @@ return (
     
     <button type="submit" className="btn btn-primary">Submit Contact</button>
   </form>
+  </div>
 )
 
 }

@@ -31,6 +31,10 @@ function App() {
     setItems(items.map((item) => item.id === updated.id ? updated : item)) 
   };
 
+  function handleContactSubmit(formData) {
+    console.log("Form Submitted", formData);
+  }
+
   return (
      <Router>
       <Layout>
@@ -38,7 +42,7 @@ function App() {
           <Route path="/" element={ <Listtodos items={items} onDelete={handleDelete} setItems={setItems} /> } />
           <Route path="/add" element={ <Addtodos items={items} onAdd={handleAdd} /> } />
           <Route path="/edit/:id" element={ <Edittodo items={items} onUpdate={updateItem}/>} />
-          <Route path="/contact" element={ <Contact initialData={{ first: '', last: '', email: '', comments: ''}} onSubmit={console.log} />} />
+          <Route path="/contacts" element={ <Contact initialData={{ first: '', last: '', email: '', comments: ''}} onSubmit={handleContactSubmit} />} />
         </Routes>
       </Layout>
      </Router>
