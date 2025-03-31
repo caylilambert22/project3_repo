@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './App.css';
 
 function ToDos_form({ initialData, onSubmit })
 {
@@ -20,6 +21,7 @@ function handleStatusChange() {
 
 
 return (
+  <div className="form-group">
   <form onSubmit = {handleSubmit}>
     <div className="mb-3">
       <label className="form-label">List To Do</label>
@@ -27,7 +29,7 @@ return (
     </div>
 
     <div className = "mb-3">
-      <label>Pick a category</label>
+      <label className="form-category">Pick a category</label>
       <select className='form-select' name='category' value={formData.category} onChange={handleChange} required>
         <option value = {'All'}>All</option>
         <option value = {'Morning'}>Morning</option>
@@ -36,8 +38,9 @@ return (
       </select>
     </div>
 
-    <button type="submit" className="btn btn-primary" onChange={handleSubmit}>Save</button>
+    <button type="submit" className="save-button" onChange={handleSubmit}>Save</button>
   </form>
+  </div>
 )
 
 }

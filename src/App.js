@@ -11,7 +11,7 @@ import Addtodos from './Addtodo.js';
 import Edittodo from './Edittodo.js';
 import Contact from './Contact.js';
 
-
+import './App.css';
 
 
 function App() {
@@ -36,6 +36,7 @@ function App() {
   }
 
   return (
+   
      <Router>
       <Layout>
         <Routes>
@@ -46,6 +47,7 @@ function App() {
         </Routes>
       </Layout>
      </Router>
+   
    
   );
 }

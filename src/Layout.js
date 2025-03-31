@@ -4,14 +4,19 @@ import { Link } from 'react-router-dom';
 function Layout({children})
 {
   return (
-    <div className='container mt-4'>
+    <div className='center-here'>
+    <div className='container mt-2 nav-container'>
       <h3 className='text-center mb-4'>My To Do List</h3>
       <nav>
-        <Link className='btn btn-primary me-2' to="/">To Do</Link>
-        <Link className='btn btn-primary me-2' to="/add">Add a task</Link>
-        <Link className='btn btn-primary me-2' to="/contacts">Contacts</Link>
+        <Link className='action-button' to="/">To Do</Link>
+        <Link className='action-button' to="/add">Add a task</Link>
+        <Link className='action-button' to="/contacts">Contacts</Link>
       </nav>
+      <div className="line-here"></div>
       {children}
+      <div className="line-here"></div>
+    </div>
+    
     </div>
   )
 }

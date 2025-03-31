@@ -50,7 +50,7 @@ return (
     </div>
 
     
-    <button type="submit" className="btn btn-primary">Submit Contact</button>
+    <button type="submit" className="save-button">Submit</button>
   </form>
   </div>
 )
