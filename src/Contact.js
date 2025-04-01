@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function Contact({ initialData, onSubmit })
 {
@@ -25,6 +26,7 @@ return (
   {popUp && (
     <div className="custom-popup">
       <p>Thanks for submitting!</p>
+      <Link className='return-button' to="/">Return to To Do</Link>
     </div>
   )}
 

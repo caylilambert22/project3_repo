@@ -1,5 +1,9 @@
 body {
-  background-color: gray;
+  background-color: rgba(128, 128, 128, 0.909);
+  background-image: url('./design-pattern3.jpeg');
+  background-size: cover;
+  background-position: relative;
+  background-repeat: no-repeat;
 }
 
 h3 {
@@ -31,9 +35,17 @@ form {
   margin-bottom: 10px;
 }
 
+.form-control:focus {
+  border-color: #f8bc24 !important ;
+  outline: none !important;
+  box-shadow: 0 0 5px rgba(248, 188, 36, 0.7);
+  
+}
+
 .form-category {
   display: block;
   margin-bottom: 10px;
+  background-color: #fffdee; 
 }
 
 .form-group {
@@ -122,4 +134,53 @@ nav {
   border-radius: 20%;
   background-color: white;
   margin-bottom: 20px;
+}
+
+.custom-popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 50%;
+
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.return-button {
+  width: 200px;
+  height: 50px;
+  background-color:#f8bc24 !important;
+  color: white !important;
+  border: none;
+  cursor: pointer;
+  flex: 1;
+
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+
+  text-decoration: none;
+  text-align: center;
+  font-weight: bold;
+
+}
+
+
+
+.table-main {
+  background-color: blue !important;
+}
+.table-top {
+  background-color: transparent !important; /* Remove background from the header */
 }

@@ -29,8 +29,8 @@ function Listtodos({items, onDelete, setItems}) {
     </div>
 
     <div className='table-responsive mt-3'>
-      <table className='table table-bordered'>
-        <thead className='table-dark'>
+      <table className='table table-main'>
+        <thead className='table-light'>
           <tr>
             <th>Completed</th>
             <th>To Do</th>
