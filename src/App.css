@@ -184,3 +184,23 @@ nav {
 .table-top {
   background-color: transparent !important; /* Remove background from the header */
 }
+
+.input-container {
+  max-width: 100%;
+  display: flex;
+  gap: 20px;
+}
+.category-filter {
+  
+  margin: 5px !important;
+
+  max-width: 100%;
+}
+
+.status-filter {
+  
+  margin: 5px;
+
+  max-width: 100%;
+
+}
