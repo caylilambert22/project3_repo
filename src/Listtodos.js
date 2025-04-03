@@ -64,9 +64,9 @@ function Listtodos({items, onDelete, setItems}) {
               <td style={{textDecoration: item.completed ? 'line-through' : 'none'}}>{item.list}</td>
               <td style={{textDecoration: item.completed ? 'line-through' : 'none'}}>{item.category}</td>
               
-              <td>
-                <Link className='btn btn-warning btn-sm me-2' to={`/edit/${item.id}`}>Edit</Link>
-                <button className='btn btn-danger btn-sm' onClick={()=>onDelete(item.id)}>Remove</button>
+              <td className="buttons-cat">
+                <Link className='btn btn-sm me-2 btn-edit' to={`/edit/${item.id}`}>Edit</Link>
+                <button className='btn btn-sm btn-remove' onClick={()=>onDelete(item.id)}>X</button>
               </td>
             </tr>
           ))}

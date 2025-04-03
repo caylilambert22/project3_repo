@@ -14,7 +14,7 @@ function Edittodo({items, onUpdate}) {
     navigate("/");
   }
 
-  return <ToDos_form initialData={item} onSubmit={handleUpdate}/>
+  return <ToDos_form initialData={item} onSubmit={handleUpdate} required/>
 
 }
 
